@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#F6CD8B"
+    tools:context=".MainActivity">
+
+
+  <ImageView
+      android:layout_width="200dp"
+      android:layout_height="200dp"
+      android:src="@drawable/logo"
+      android:id="@+id/image"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="-150dp"/>
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/first"
+      android:layout_below="@+id/image"
+      android:textAlignment="center"
+      android:text="Welcome To CCSS"
+      android:textSize="40sp"/>
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Attendance Portal"
+      android:layout_below="@+id/first"
+      android:textAlignment="center"
+      android:textSize="40sp"
+      android:id="@+id/second"
+      android:layout_marginBottom="30sp"/>
+    <EditText
+        android:id="@+id/username"
+        android:layout_below="@+id/second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:textSize="22sp"
+        android:singleLine="true"
+        android:fontFamily="sans-serif-condensed-light"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:inputType="textPassword"
+        android:hint="Password"
+        android:fontFamily="sans-serif-condensed-light"
+        android:layout_marginBottom="20dp"
+        android:singleLine="true"/>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:text="Submit"
+        android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+        android:background="@drawable/button_design"
+        android:textSize="30sp" />
+
+</RelativeLayout>
