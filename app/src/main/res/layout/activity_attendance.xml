@@ -7,7 +7,8 @@
     tools:context=".Attendance">
 
 
-    <include layout="@layout/background"/>
+    <include layout="@layout/background" />
+
     <LinearLayout
         android:id="@+id/linear2"
         android:layout_width="match_parent"
@@ -114,14 +115,11 @@
         </LinearLayout>
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/listview"
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/linear3"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="10dp"
-        android:dividerHeight="20sp"/>
+        android:layout_height="wrap_content"
+        android:id="@+id/recycle"
+        android:layout_below="@+id/linear3"/>
 
 
 

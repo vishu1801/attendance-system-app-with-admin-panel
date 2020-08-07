@@ -1,6 +1,8 @@
 package com.e.attandancesyatem;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,9 +29,9 @@ public class Attendance extends AppCompatActivity {
 
     TextView subject,clas,dated;
     String classs,sub,formatter,id;
-    ListView listView;
+    RecyclerView recycle;
+    StudentRecyclerAdapter recycleadapter;
     ArrayList<StudentInfo> arrayList = new ArrayList();
-    StudentInfoAdapter arrayAdapter;
 
 
     @Override
@@ -47,14 +49,13 @@ public class Attendance extends AppCompatActivity {
         dated.setText(formatter);
 
 
-        arrayAdapter=new StudentInfoAdapter(arrayList,sub,classs,formatter,getApplicationContext(),Attendance.this);
-        listView.setAdapter(arrayAdapter);
+        recycle.setLayoutManager(new LinearLayoutManager(this));
+        recycleadapter = new StudentRecyclerAdapter(arrayList,this,formatter,classs,sub);
+        recycle.setAdapter(recycleadapter);
+
 
         subject.setText(sub);
         clas.setText(classs);
-
-        String formatter = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
-        dated.setText(formatter);
 
         getstudentinfo();
     }
@@ -77,7 +78,7 @@ public class Attendance extends AppCompatActivity {
                         StudentInfo studentInfo = new StudentInfo(response.body().get(i).getFirstname(), response.body().get(i).getLastname());
                         arrayList.add(studentInfo);
                     }
-                    arrayAdapter.notifyDataSetChanged();
+                    recycleadapter.notifyDataSetChanged();
                 }
 
             }
@@ -93,6 +94,6 @@ public class Attendance extends AppCompatActivity {
         subject = findViewById(R.id.subject);
         clas=findViewById(R.id.classs);
         dated=findViewById(R.id.date);
-        listView=findViewById(R.id.listview);
+        recycle=findViewById(R.id.recycle);
     }
 }
