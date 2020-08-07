@@ -52,6 +52,7 @@ public class Home extends AppCompatActivity {
                     intent.putExtra("class", arrayList.get(position).getClasss());
                     intent.putExtra("sub", arrayList.get(position).getSubject());
                     startActivity(intent);
+                    finish();
                 } else {
                     nointernetconnection();
                 }

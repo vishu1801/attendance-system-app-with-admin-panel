@@ -71,7 +71,7 @@ public class ClassSubjectAdapter extends ArrayAdapter {
         viewHolder.clas.setText(item.getClasss());
         viewHolder.subject.setText(item.getSubject());
         Animation animation = AnimationUtils.loadAnimation(mContext,R.anim.slide);
-        viewGroup.startAnimation(animation);
+        view.startAnimation(animation);
         return view;
     }
 
